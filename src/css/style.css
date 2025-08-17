@@ -1,0 +1,258 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #137ff3;
+    margin: 0;
+}
+
+html.dragging, html.dragging * {
+    cursor: grabbing !important;
+}
+
+.empty-item {
+    box-sizing: border-box;
+    height: 0;
+
+    background-color: #cccccc;
+    border-radius: 3px;
+    border: 1px dashed grey;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn i {
+    pointer-events: none;
+}
+
+.kanban-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 10px 15px;
+
+    background: #004d99;
+    color: white;
+}
+
+.kanban-title {
+    margin: 0;
+    font-weight: 700;
+}
+
+.i-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background: none;
+    color: #888888;
+
+    transform-origin: center;
+    transition: transform 0.1s ease;
+}
+
+.i-btn:hover {
+    transform: scale(1.05);
+}
+
+.i-btn:active {
+    color: #333333;
+    transform: scale(1);
+}
+
+.kanban {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    box-sizing: border-box;
+
+    padding: 10px 10px 0;
+    width: 300px;
+    min-width: 165px;
+
+    background-color: #dcdcdc;
+    border-radius: 5px;
+
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-title {
+    margin: 0 10px 0 0;
+    padding: 0 10px;
+
+    font-size: 14px;
+}
+
+.column-body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+
+    background-color: white;
+    border-radius: 3px;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.card-title {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.card.dragged {
+    position: absolute;
+
+    background-color: #eeeeee;
+
+    pointer-events: none;
+    z-index: 1010;
+}
+
+.card:hover .card-close {
+    opacity: 1;
+}
+
+.card-close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    height: 25px;
+    width: 25px;
+
+    background-color: white;
+    border-radius: 4px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.column-footer {
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 0 0 10px;
+    min-height: 30px;
+}
+
+.add-card-btn {
+    margin: 0;
+    padding: 0 5px;
+
+    background: none;
+    border: none;
+
+    font: inherit;
+    text-decoration: none;
+}
+
+.add-card-btn:hover .add-card-title {
+    text-decoration: underline;
+}
+
+.add-card-btn:active {
+    color: #353535;
+}
+
+.add-card-btn span {
+    pointer-events: none;
+}
+
+.plus {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.add-card-title {
+    margin-left: 5px;
+}
+
+.add-form {
+    width: 100%;
+}
+
+.add-input {
+    box-sizing: border-box;
+    min-height: 4em;
+    width: 100%;
+    padding: 7px;
+
+    vertical-align: top;
+    text-align: left;
+    resize: none;
+
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+    outline: none;
+    overflow: hidden;
+}
+
+.add-actions {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-confirm-btn {
+    box-sizing: border-box;
+    padding: 7px 10px;
+
+    color: white;
+    font-size: 0.9em;
+
+    background-color: rgba(24, 177, 24, 0.77);
+    border: none;
+    border-radius: 3px;
+}
+
+.add-confirm-btn:hover {
+    background-color: green;
+}
+
+.add-confirm-btn:active {
+    background-color: rgba(24, 177, 24, 0.77);
+}
+
+.add-close {
+    margin-left: 10px;
+}
+
+.add-prop-btn {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.bad-status {
+    border: 1px solid red;
+}
